@@ -1,17 +1,26 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-15 15:19:01
+ * @LastEditTime : 2019-12-18 16:28:21
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /mimall/src/App.vue
+ -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    
+  },
+  mounted(){
+    
   }
 }
 </script>

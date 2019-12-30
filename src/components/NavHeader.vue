@@ -74,7 +74,7 @@ export default {
   name: 'nav-header',
   data () {
     return {
-      username: 'koa',
+      username: '',
       phoneList: []
     }
   },

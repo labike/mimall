@@ -16,11 +16,21 @@
 
 export default {
   name: 'app',
-  components: {
-    
-  },
   mounted(){
-    
+    this.getUser()
+    this.getCartCount()
+  },
+  methods: {
+    getUser () {
+      this.axios.get('/user').then(() => {
+
+      })
+    },
+    getCartCount () {
+      this.axios.get('/carts/products/sum').then(() => {
+
+      })
+    }
   }
 }
 </script>

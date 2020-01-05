@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-15 15:19:01
- * @LastEditTime : 2020-01-03 11:05:26
+ * @LastEditTime : 2020-01-05 12:10:40
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/components/NavHeader.vue
@@ -164,40 +164,7 @@ export default {
         position: relative;
         height: 112px;
         @include flex();
-        .header-logo{
-          display: inline-block;
-          width: 55px;
-          height: 55px;
-          background-color: #ff6600;
-          a{
-            display: inline-block;
-            width: 110px;
-            height: 55px;
-            &:before{
-              @include bgImg(55px, 55px, '/images/mi-logo.png', 55px);
-              content: '';
-              // display: inline-block;
-              // width: 55px;
-              // height: 55px;
-              // background: url('/images/mi-logo.png') no-repeat center;
-              // background-size: 55px;
-              transition: margin .2s;
-            }
-            &:after{
-              content: '';
-              @include bgImg(55px, 55px, '/images/mi-home.png', 55px);
-              // display: inline-block;
-              // width: 55px;
-              // height: 55px;
-              // background: url('/images/mi-home.png') no-repeat center;
-              // background-size: 55px;
-            }
-            &:hover:before{
-              margin-left: -55px;
-              transition: margin .2s;
-            }
-          }
-        }
+        
         .header-menu{
           display: inline-block;
           width: 643px;

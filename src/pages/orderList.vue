@@ -14,6 +14,12 @@
 
 <script>
 export default {
-  name: 'order-list'
+  name: 'order-list',
+  mounted () {
+
+  },
+  methods: {
+    
+  }
 }
 </script>

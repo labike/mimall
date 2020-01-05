@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-15 15:19:01
- * @LastEditTime : 2019-12-27 14:35:14
+ * @LastEditTime : 2020-01-03 11:05:26
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/components/NavHeader.vue
@@ -22,7 +22,7 @@
           <a href="javascript:;">我的订单</a>
           <a class="my-cart" href="javascript:;" @click="goToCart">
             <span class="icon-cart"></span>
-            购物车
+            购物车({{cartCount}})
           </a>
         </div>
       </div>
@@ -70,11 +70,13 @@
 </template>
 
 <script>
+// import {mapState} from 'vuex'
+
 export default {
   name: 'nav-header',
   data () {
     return {
-      username: '',
+      // username: this.$store.state.username,
       phoneList: []
     }
   },
@@ -86,6 +88,15 @@ export default {
   },
   mounted () {
     this.getProductList()
+  },
+  computed: {
+    username () {
+      return this.$store.state.username
+    },
+    cartCount () {
+      return this.$store.state.cartCount
+    },
+    // ...mapState(['username', 'cartCount'])
   },
   methods: {
     login () {

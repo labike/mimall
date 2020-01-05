@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-16 13:31:21
- * @LastEditTime: 2019-12-17 15:29:49
- * @LastEditors: your name
+ * @LastEditTime : 2020-01-03 11:09:04
+ * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/pages/login.vue
  -->
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// import {mapActions} from 'vuex'
 
 export default {
   name: 'login',
@@ -58,20 +59,21 @@ export default {
     login () {
       let {username, password} = this;
       this.axios.post('/user/login', {
-        params: {
-          username,
-          password
-        }
+        username,
+        password
       }).then(res => {
         this.$cookie.set('userId', res.id, {expires: '1M'})
+        this.$store.dispatch('saveUserName', res.username)
+        // this.saveUserName(res.username)
         this.$router.push('/index')
       })
     },
+    // ...mapActions(['saveUserName']),
     register () {
       this.axios.post('/user/register', {
-        username: 'labike',
-        password: 'labike',
-        email: 'labike@qq.com'
+        username: 'redmagic',
+        password: 'redmagic',
+        email: 'redmagic@qq.com'
       }).then(() => {
         alert('注册成功')
       })

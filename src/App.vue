@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-15 15:19:01
- * @LastEditTime : 2019-12-28 16:10:03
+ * @LastEditTime : 2019-12-30 14:26:14
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/App.vue
@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     getUser () {
-      this.axios.get('/user').then(() => {
-
+      this.axios.get('/user').then((res={}) => {
+        this.$store.dispatch('saveUserName', res.username)
       })
     },
     getCartCount () {
-      this.axios.get('/carts/products/sum').then(() => {
-
+      this.axios.get('/carts/products/sum').then((res) => {
+        this.$store.dispatch('saveCartCount', res)
       })
     }
   }

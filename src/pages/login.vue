@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-16 13:31:21
- * @LastEditTime : 2020-01-03 11:09:04
+ * @LastEditTime : 2020-01-05 15:52:35
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/pages/login.vue
@@ -62,10 +62,21 @@ export default {
         username,
         password
       }).then(res => {
-        this.$cookie.set('userId', res.id, {expires: '1M'})
+        this.$cookie.set('userId', res.id, {expires: 'Session'})
         this.$store.dispatch('saveUserName', res.username)
         // this.saveUserName(res.username)
-        this.$router.push('/index')
+        this.$router.push({
+          name: 'index',
+          params: {
+            from: 'login'
+          }
+        })
+        // this.$router.push({
+        //   path: '/index',
+        //   query: {
+        //     from: 'login'
+        //   }
+        // })
       })
     },
     // ...mapActions(['saveUserName']),
@@ -75,7 +86,7 @@ export default {
         password: 'redmagic',
         email: 'redmagic@qq.com'
       }).then(() => {
-        alert('注册成功')
+        this.$message.success('注册成功')
       })
     }
   }

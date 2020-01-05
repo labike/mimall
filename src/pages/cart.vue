@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-16 13:31:06
- * @LastEditTime: 2019-12-17 15:37:58
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2020-01-05 15:55:56
+ * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/pages/cart.vue
  -->
@@ -112,13 +112,13 @@ export default {
 
       if(type === '-'){
         if(quantity === 1){
-          alert('商品至少保留一件')
+          this.$message.warning('商品至少保留一件')
           return
         }
         --quantity
       }else if(type === '+'){
         if(quantity >= item.productStock){
-          alert('商品不能超过库存数量')
+          this.$message.warning('商品不能超过库存数量')
           return
         }
         ++quantity
@@ -134,13 +134,14 @@ export default {
     },
     delCartItem (item) {
       this.axios.delete(`/carts/${item.productId}`).then(res => {
+        this.$message.success('删除成功')
         this.renderData(res)
       })
     },
     order () {
       let isCheck = this.cartList.every(item => !item.productSelected)
       if(isCheck){
-        alert('请选择一件商品')
+        this.$message.warning('请选择一件商品')
       }else{
         this.$router.push('/order/confirm')
       }

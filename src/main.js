@@ -25,9 +25,13 @@ axios.interceptors.response.use(response => {
     }
     return Promise.reject(res)
   }else{
-    this.$message.warning(res.msg)
+    Message.warning(res.msg)
     return Promise.reject(res)
   }
+}, (err) => {
+  let res = err.response
+  Message.error(res.data.message)
+  return Promise.reject(err)
 })
 
 Vue.config.productionTip = false

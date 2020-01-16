@@ -23,8 +23,6 @@
 </template>
 
 <script>
-// import {mapState} from 'vuex'
-
 export default {
   name: 'order-header',
   components: {
@@ -37,7 +35,6 @@ export default {
     username () {
       return this.$store.state.username
     }
-    // ...mapState(['username'])
   },
 }
 </script>

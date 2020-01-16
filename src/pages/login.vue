@@ -44,8 +44,6 @@
 </template>
 
 <script>
-// import {mapActions} from 'vuex'
-
 export default {
   name: 'login',
   data () {
@@ -64,22 +62,14 @@ export default {
       }).then(res => {
         this.$cookie.set('userId', res.id, {expires: 'Session'})
         this.$store.dispatch('saveUserName', res.username)
-        // this.saveUserName(res.username)
         this.$router.push({
           name: 'index',
           params: {
             from: 'login'
           }
         })
-        // this.$router.push({
-        //   path: '/index',
-        //   query: {
-        //     from: 'login'
-        //   }
-        // })
       })
     },
-    // ...mapActions(['saveUserName']),
     register () {
       this.axios.post('/user/register', {
         username: 'redmagic',

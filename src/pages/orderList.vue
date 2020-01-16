@@ -139,13 +139,6 @@ export default {
       })
     },
     goPay (orderNo) {
-      // name方式
-      // this.$router.push({
-      //   name: 'order-pay',
-      //   query: {
-      //     orderNo
-      //   }
-      // })
       this.$router.push({
         path: '/order/pay',
         query: {

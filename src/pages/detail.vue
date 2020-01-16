@@ -101,7 +101,6 @@ export default {
   },
   methods: {
     getProductInfo () {
-      // let id = this.$route.params.id
       this.axios.get(`/products/${this.id}`).then(res => {
         this.product = res
       })

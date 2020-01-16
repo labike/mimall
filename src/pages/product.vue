@@ -236,11 +236,6 @@ export default {
             &.slideUp{
               animation: slideUp .6s linear;
             }
-            // transition: all .6s;
-            // &.slide{
-            //   top: 50%;
-            //   opacity: 1;
-            // }
             .icon-close{
               @include bgImg(20px, 20px, '/images/icon-close.png');
               position: absolute;

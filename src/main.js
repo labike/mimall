@@ -6,12 +6,10 @@ import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
 import {Message} from 'element-ui'
 
-// import env from './util/env'
 import App from './App.vue'
 import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 
-//axios.defaults.baseURL = env.baseURL
 axios.defaults.baseURL = '/api'
 axios.defaults.timeout = 8000
 axios.interceptors.response.use(response => {

@@ -71,13 +71,10 @@
 </template>
 
 <script>
-// import {mapState} from 'vuex'
-
 export default {
   name: 'nav-header',
   data () {
     return {
-      // username: this.$store.state.username,
       phoneList: []
     }
   },
@@ -101,7 +98,6 @@ export default {
     cartCount () {
       return this.$store.state.cartCount
     },
-    // ...mapState(['username', 'cartCount'])
   },
   methods: {
     login () {
@@ -115,9 +111,6 @@ export default {
         }
       }).then(res => {
         this.phoneList = res.list
-        // if(res.list.length >= 6){
-        //   this.phoneList = res.list.slice(0, 6)
-        // }
       })
     },
     goToCart () {
@@ -170,12 +163,6 @@ export default {
           .icon-cart{
             @include bgImg(16px, 12px, '/images/icon-cart-checked.png');
             margin-right: 4px;
-            // display: inline-block;
-            // width: 16px;
-            // height: 12px;
-            // margin-right: 4px;
-            // background: url('/images/icon-cart-checked.png') no-repeat center;
-            // background-size: contain
           }
         }
       }
@@ -281,11 +268,6 @@ export default {
             }
             a{
               @include bgImg(18px, 18px, '/images/icon-search.png');
-              // display: inline-block;
-              // width: 18px;
-              // height: 18px;
-              // background: url('/images/icon-search.png') no-repeat center;
-              // background-size: contain;
               margin-left: 17px;
             }
           }

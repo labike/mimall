@@ -8,6 +8,11 @@
  -->
 <template>
   <div class="order-pay">
+    <order-header title="订单支付">
+      <template v-slot:tip>
+        <span>请谨防钓鱼链接或诈骗电话</span>
+      </template>
+    </order-header>
     <div class="wrapper">
       <div class="container">
         <div class="order-wrap">
@@ -79,10 +84,12 @@
 import QRCode from 'qrcode'
 import ScanPayCode from '../components/ScanPayCode'
 import Modal from '../components/Modal'
+import OrderHeader from '../components/OrderHeader';
 
 export default {
   name: 'order-pay',
   components: {
+    OrderHeader,
     ScanPayCode,
     Modal
   },
@@ -154,7 +161,7 @@ export default {
       }, 1000)
     },
     goOrderList () {
-      this.$router.push('order/list')
+      this.$router.push('/order/list')
     }
   }
 }

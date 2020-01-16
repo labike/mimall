@@ -1,13 +1,18 @@
 <!--
  * @Author: your name
  * @Date: 2019-12-16 13:30:53
- * @LastEditTime : 2020-01-10 14:30:57
+ * @LastEditTime : 2020-01-15 14:54:46
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /mimall/src/pages/orderConfirm.vue
  -->
 <template>
   <div class="order-confirm">
+    <order-header title="订单确认">
+      <template v-slot:tip>
+        <span>请认真填写收货地址</span>
+      </template>
+    </order-header>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0px; height: 0px; overflow: hidden;">
       <defs>
         <symbol id="icon-add" viewBox="0 0 31 32">
@@ -168,11 +173,13 @@
 
 <script>
 import Modal from '../components/Modal'
+import OrderHeader from '../components/OrderHeader';
 
 export default {
   name: 'order-confirm',
   components: {
-    Modal
+    Modal,
+    OrderHeader
   },
   data () {
     return {
